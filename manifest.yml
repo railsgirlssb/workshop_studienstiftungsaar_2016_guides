@@ -1,0 +1,8 @@
+---
+applications:
+- name: railsgirlssb-guides-sts
+  memory: 64M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry-incubator/staticfile-buildpack.git#v0.5.2
+  host: railsgirlssb-guides-sts
+  domain: de.a9sapp.eu
