@@ -57,7 +57,7 @@ Probier es aus!
 
 ### Mehr Operatoren
 
-Bevor wir das Kapitel beenden, sehen wir uns zwei weitere Operatoren an:
+Sehen wir uns zwei weitere Operatoren an:
 
 | Symbol | Bedeutung          |
 |--------|--------------------|
