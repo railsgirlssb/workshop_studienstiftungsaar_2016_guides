@@ -241,3 +241,35 @@ Probier einige Methoden aus:
 {% endhighlight %}
 
 # Variablen
+
+## Was ist eine Variable?
+
+Eine `Variable` ist ein Name, den Ruby einem bestimmten `Objekt` zuordnet.
+Zum Beispiel können wir in `irb` mal folgendes ausprobieren:
+
+{% highlight ruby %}
+stadt = "Berlin"
+{% endhighlight %}
+
+Hier ordnet Ruby der Zeichenkette "Berlin" den Namen (Variable) stadt zu.
+
+Stell dir das so vor, als ob Ruby zwei Tabellen erstellt.
+Eine Tabelle für Objekte und die andere Tabelle für Namen, die es jedem Objekt zuordnet.
+Stell dir dann einen Pfeil vor, den Ruby von `stadt` nach `"Berlin"` zeichnet.
+
+Jedesmal wenn Ruby auf `stadt` trifft, wird es dem Pfeil folgen und an der Zeichenkette `"Berlin"` ankommen.
+
+Warnung: Variablennamen dürfen nicht mit einem Großbuchstaben beginnen.
+
+## Mit Variablen arbeiten
+
+Du kannst Variablen genauso manipulieren, wie du die Objekte manipulierst, die sie repräsentieren.
+Probier folgendes aus:
+
+{% highlight ruby %}
+var1 = 7
+var2 = 4
+var3 = var1 + var 2
+var4 = "hallo"
+var4 = var4 * var2
+{% endhighlight %}
