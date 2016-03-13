@@ -116,8 +116,8 @@ Wenn Ruby `"1"` sieht, wird es als Zeichen und nicht als Zahl angesehen.
 Hier einige elegante Operationen, die man mit Zeichenketten anstellen kann:
 
 * `"hallo".capitalize`
-* `"hallo".next`
 * `"Hallo".swapcase`
+* `"a".next`
 
 ## Übungen
 
