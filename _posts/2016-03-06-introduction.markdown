@@ -369,3 +369,94 @@ else
   puts "Frei"
 end
 {% endhighlight %}
+
+# Arrays
+
+Du bist schon vertraut mit einige Ruby-Klassen (`Integer` und `String` z.B.).
+Die Klasse `Array` wird benutzt, um eine _Sammlung_ von Daten zu repräsentieren.
+
+Dies ist am besten mit einem Beispiel zu verstehen:
+{% highlight ruby %}
+zahlen = [ "null", "eins", "zwei", "drei", "vier" ]
+zahlen.class
+{% endhighlight %}
+
+Hier sagt uns die **Klassenmethode**, dass die Variable `zahlen` ein `Array` ist.
+
+Man kann auf die einzelnen Elemente des Arrays folgendermaßen zugreifen:
+
+{% highlight ruby %}
+zahlen[0]
+# => "null"
+
+zahlen[1]
+# => "eins"
+
+zahlen[4]
+# => "vier"
+{% endhighlight %}
+
+Man kann mehr mehr Einträge in das Array einfügen:
+
+{% highlight ruby %}
+numbers[5] = "fuenf"
+# => "fuenf"
+{% endhighlight %}
+
+Beachten Sie, dass die Einträge der Reihe nach in das Array eingefügt werden, beginnend mit dem **Index** 0.
+Ein Array kann eine beliebige Anzahl von Objekten enthalten.
+Die Objekte in dem Array können wir wie zuvor manipuliert werden.
+
+{% highlight ruby %}
+zahlen[3].class
+# => String
+
+zahlen[3].upcase
+# => "DREI"
+
+zahlen[3].reverse
+# => "ierd"
+{% endhighlight %}
+
+Welche Art von Dingen kann man in Arrays einfügen?
+Nun, jedes Objekt.
+
+Wie wärs mit Strings und Integers:
+
+{% highlight ruby %}
+adresse = [ 66113, "Saarbrücken" ]
+{% endhighlight %}
+
+Das ist alles sehr nett, aber kann man irgendwas cooles mit Arrays machen? Sicherlich kann man das.
+
+## Array#sort
+
+Du kannst Arrays mit der Methode Array#sort sortieren.
+
+{% highlight ruby %}
+primzahlen = [ 11, 5, 7, 2, 13, 3 ]
+primzahlen.sort
+{% endhighlight %}
+
+{% highlight ruby %}
+namen = [ "Melissa", "Daniel", "Samantha", "Jeffrey"]
+namen.sort
+{% endhighlight %}
+
+## Array#reverse
+
+Du kannst Arrays umdrehen:
+
+{% highlight ruby %}
+namen
+# => ["Melissa", "Daniel", "Samantha", "Jeffrey"]
+namen.reverse
+{% endhighlight %}
+
+## Array#length
+
+Du kannst die Länge eines Arrays herausfinden:
+
+{% highlight ruby %}
+namen.length
+{% endhighlight %}
