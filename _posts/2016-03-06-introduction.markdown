@@ -87,6 +87,44 @@ In diesem Beispiel passt die Zahl 2 zweimal in 5.1 rein und 1.1 bleibt übrig.
 
 # Zeichenketten
 
+Das waren also die Zahlen... aber was ist mit Buchstaben? Wörtern? Text?
+
+Das Wort, das wir für eine Gruppe von Buchstaben verwenden, ist `Zeichenkette` oder `String`.
+
+Wir werden beide Ausdrücke verwenden.
+
+## Was man mit Zeichenketten machen kann
+Hier sind Beispiele für Strings die man in `irb` ausprobieren kann:
+
+* `"Hallo."`
+* `"Ruby rocks."`
+* `"5 ist meine Lieblingszahl... und deine?"`
+* `"Snoopy sagt #%^?&*@!"`
+
+Ruby kann elegante Dinge mit Zeichenketten machen.
+Probier man folgendes aus:
+
+* `"Hallo " + "Welt"`
+* `"hi " * 3`
+* `"1" + "2"`
+* `"1" * 2`
+
+Wenn Ruby `"1"` sieht, wird es als Zeichen und nicht als Zahl angesehen.
+
+## Mehr Dinge, die man mit Zeichenketten machen kann
+
+Hier einige elegante Operationen, die man mit Zeichenketten anstellen kann:
+
+* `"hallo".capitalize`
+* `"hallo".next`
+* `"Hallo".swapcase`
+
+## Übungen
+
+* Was erwartest du wird folgendes zurückgeben: `"hallo".length + "welt".length`
+* Versuch in der [Dokumentation von Ruby](http://ruby-doc.org/core-2.2.0/String.html) nachzuschlagen, wie man ein Wort umdreht oder in Großbuchstaben umwandelt und probier es aus.
+
+
 # Neue Namen für alte Dinge
 
 Ruby (und andere Programmiersprachen) benutzt spezielle Namen für Dinge, die wir bisher kennengelernt haben.
