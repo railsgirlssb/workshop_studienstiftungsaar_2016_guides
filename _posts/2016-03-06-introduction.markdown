@@ -37,11 +37,11 @@ Man kann z.B. folgende Rechnenoperationen nutzen:
 * Probier es einfach mal in der interaktiven Ruby-Shell aus, indem du z.B. `1 + 2` eingibst oder andere Berechnungen anstellst!
 * Was passiert, wenn du 3 durch 2 dividierst, also `3/2` ausführst?
 
-# Zahlen in Ruby
+## Zahlen in Ruby
 
 Es stellt sich heraus, dass Ruby zwei verschiedene Klassen von Zahlen versteht:
 
-## Integers
+### Integers
 
 Ein Integer ist eine ganze Zahl, wie `1`, `2`, `-5`, usw.
 Wenn du nur Integerwerte benutzt, wird dir Ruby auch ein Integer zurückliefern.
@@ -49,13 +49,13 @@ Wenn du nur Integerwerte benutzt, wird dir Ruby auch ein Integer zurückliefern.
 `3/2` ist `1.5`, aber das ist kein Integerwert, deshalb gibt Ruby `1` zurück.
 
 
-## Fließkommazahlen (Floats)
+### Fließkommazahlen (Floats)
 
 Fließkommazahlen sind Zahlen mit Kommastellen, wie `3.14`, `1.5`, `3.0`, usw.
 Wenn du Fließkommazahlen benutzt, wird dir Ruby auch einen Fließkommawert zurückgeben, z.B. im Fall von `3.0 / 2.0`.
 Probier es aus!
 
-## Mehr Operatoren
+### Mehr Operatoren
 
 Bevor wir das Kapitel beenden, sehen wir uns zwei weitere Operatoren an:
 
@@ -73,7 +73,7 @@ Probier in der interaktiven Ruby-Shell folgendes aus:
 Schau dir an, wie der Operator `%` mit Dezimalzahlen umgeht.
 In diesem Beispiel passt die Zahl 2 zweimal in 5.1 rein und 1.1 bleibt übrig.
 
-# Übungen
+## Übungen zu Zahlen
 
 * Wieviele Stunden hat ein Jahr?
 
@@ -84,3 +84,122 @@ In diesem Beispiel passt die Zahl 2 zweimal in 5.1 rein und 1.1 bleibt übrig.
   * `4.1 % 2`
 
   Ist der Rückgabewert ein Integer- oder ein Fließkommawert?
+
+# Zeichenketten
+
+# Neue Namen für alte Dinge
+
+Ruby (und andere Programmiersprachen) benutzt spezielle Namen für Dinge, die wir bisher kennengelernt haben.
+Zum Beispiel benutzt es das Wort `Float` für eine Fließkommazahl.
+
+Hier mehr Definitionen:
+
+* **Objekt**: Das ist irgendeine Menge an Daten. Wie die Zahl 3 oder die Zeichenkette 'hallo'.
+* **Klasse**: Ruby spaltet alles in Klassen auf. Wie Integers, Fließkommazahlen und Zeichenketten.
+* **Methode**: Dies sind Dinge, die man mit einem Objekt anstellen kann. Zum Beispiel kann man Integers addieren, also ist `+` eine Methode.
+
+Wir haben bereits drei Klassen für Dinge gesehen:
+
+| Alter Name       | Ruby Klasse |
+|------------------|-------------|
+| Integer          | **Integer** |
+| Fließkommazahlen | **Float**   |
+| Zeichenketten    | **String**  |
+
+Wir haben auch schon einige Methoden kennengelernt:
+
+| Ruby Klasse | Einige Methoden  |
+|-------------|------------------|
+| Integer     | + - / * % **|
+| Float       | + - / * % **|
+| String      | capitalize, reverse, length, upcase|
+
+
+## Klassen im Vergleich zu Objekten
+
+Mach dir den Unterschied zwischen Klassen und Objekten klar. Ein Objekt ist eine Menge von Daten. Eine Klasse sagt, um welche Art von Daten es sich handelt.
+
+Zum Beispiel sind 3 und 5 verschiedene Zahlen.
+Sie sind nicht dasselbe Objekt.
+Aber sie sind beide Integerwerte, somit gehören sie zur selben Klasse.
+
+Hier sind mehr Beispiele:
+
+| Objekt  | Klasse  |
+|---------|---------|
+| 2       | Integer |
+| -5      | Integer |
+| 7.2     | Float   |
+| 3.15    | Float   |
+| 'hello' | String  |
+| 'world' | String  |
+
+## Die Klasse#Methode-Notation
+
+Verschiedene Klassen haben unterschiedliche Methoden.
+Du hast unter anderem schon folgende gesehen:
+
+* Division (/) funktioniert nicht für ganze Zahlen und Fließkommazahlen gleich.
+* Addition (+) macht mit Zeichenketten nicht das selbe wie mit ganzen Zahlen.
+* Zeichenketten haben einige Methoden, die Integers und Fließkommazahlen nicht haben (z.B. `capitalize`, `length`, `upcase`, usw).
+
+Aus diesem Grund verwenden wir die Notation/Schreibweise `Klasse#Methode` um klarzustellen, welche Methode wir meinen.
+Z.B. werden wir `Integer#+` schreiben um es von `Float#+` und `String#+` zu unterscheiden.
+Wir könnten z.B. auch schreiben, dass `String#upcase` existiert, aber `Integer#upcase` nicht.
+
+## Konvertierung zwischen Klassen
+
+Ruby hat Methoden, um zwischen Klassen zu konvertieren:
+
+|Methode      | Konvertiert Von | Nach   |
+|-------------|-----------------|--------|
+|String#to_i  | String          |Integer |
+|String#to_f  | String          |Float   |
+|Integer#to_f | Integer         |Float   |
+|Integer#to_s | Integer         |String  |
+|Float#to_i   | Float           |Integer |
+|Float#to_s   | Float           |String  |
+
+Probier einige Methoden aus:
+
+* `34.to_s`
+* `"12".to_i`
+* `"hallo".to_i`
+* `27.2.to_i`
+* `3.to_f`
+
+
+## Übungen
+
+* Ruby kann sagen, um welche Klasse es sich bei einem Objekt handelt. Probier folgendes aus:
+
+{% highlight ruby %}
+12.is_a?(Integer)
+12.is_a?(Float)
+12.is_a?(String)
+
+'12'.is_a?(Integer)
+'12'.is_a?(Float)
+'12'.is_a?(String)
+
+12.0.is_a?(Integer)
+12.0.is_a?(Float)
+12.0.is_a?(String)
+{% endhighlight %}
+
+  Welchen Unterschied siehst du?
+
+* Gib folgendes in `irb` ein und prüfe, ob es das Ergebnis ist, das du erwarten würdest.
+
+{% highlight ruby %}
+12 + 12
+'12' + '12'
+
+'12'.to_i + 12
+'12' + 12.to_s
+
+12 * 12
+'12' * 12
+{% endhighlight %}
+
+# Variablen
