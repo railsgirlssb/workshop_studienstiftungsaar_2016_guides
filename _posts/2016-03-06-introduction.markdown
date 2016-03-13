@@ -273,3 +273,28 @@ var3 = var1 + var 2
 var4 = "hallo"
 var4 = var4 * var2
 {% endhighlight %}
+
+Variablen erleichtern es Informationen einfacher im Auge zu behalten.
+
+Stellen dir vor, du bekommst diese Anweisungen:
+
+1. Addiere 2, 4, 6 und 8 zusammen.
+1. Nimm das Ergebnis und dividieren es durch 5.
+1. Nimm das Produkt von 2, 3 und 4.
+1. Nimm das Ergebnis aus Zeile 2 und subtrahieren es vom Ergebnis von Zeile 3.
+
+Du könntest einen langen Ausdruck schreiben, um das Ergebnis zu berechnen.
+Es ist aber viel einfacher zu schreiben:
+
+{% highlight ruby %}
+num1 = 2 + 4 + 6 + 8
+# => 20
+num1 = num1/ 5
+# => 4
+num2 = 2 * 3 * 4
+# => 24
+num2 = num2 - num1
+# => 20
+
+
+{% endhighlight %}
