@@ -295,6 +295,77 @@ num2 = 2 * 3 * 4
 # => 24
 num2 = num2 - num1
 # => 20
+{% endhighlight %}
 
+# Bedingte Anweisung
 
+Eine Bedingte Anweisung ist ein Programmabschnitt, der nur unter einer bestimmten Bedingung ausgeführt wird.
+Eine Verzweigung legt fest, welcher von zwei (oder mehr) Programmabschnitten ausgeführt wird.
+
+Die sogenannten `if`-Anweisungen inu Ruby erlauben es verschiedene Aktionen auszuführen, je nachdem welche Bedingung erfüllt wurde.
+Zum Beispiel:
+
+{% highlight ruby %}
+if state == "Saarland"
+   capital = "Saarbrücken
+else
+   capitel = "keine Ahnung :-("
+end
+{% endhighlight %}
+
+Das sagt aus:
+
+1. Wenn (`if`) das Bundesland (`state`) gleich (`==`) `"Saarbrücken"` ist, dann setze die Hauptstadt (`capital`) auf `Saarbrücken`.
+1. Andernfalls (`else`) setze Hauptstadt (`capital`) auf `keine Ahnung :-(`.
+
+## Wahr (**true**) und falsch (**false**)
+
+Ruby hat eine Notation für `wahr` und `falsch`.
+Dies wird am besten durch Beispiele aufgezeigt.
+Probier einfach folgende Ausdrücke in `irb` aus:
+
+{% highlight ruby %}
+3 > 2
+3 < 2
+
+num = 4
+num == 4
+
+stadt = "Berlin"
+stadt == "Berlin"
+{% endhighlight %}
+
+Die obige `if`-Anweisung wertet aus, ob der Ausdruck (z.B. `state == "Saarbrücken"`) **true** (wahr) oder **false** (falsch) ist und handelt dementsprechend.
+
+Zu beachten ist der Unterschied zwischen `=` und `==`.
+
+* `=` ist der Zuweisungsoperator.
+* `==` ist ein Vergleichsoperator.
+
+## Häufig genutzte Konditionale
+
+Hier eine Liste der am häufigsten verwendeten Konditionale:
+
+| == | gleich |
+| != | ungleich |
+| > | größer als|
+| < | kleiner als |
+| >= | größer als oder gleich |
+| <= | kleiner als oder gleich |
+
+## elsif
+
+Das Schlüsselwort `elsif` erlaubt es mehr als eine Bedingung einzufügen.
+Zum Beispiel:
+
+{% highlight ruby %}
+if alter >= 60
+  puts "Seniorenpreis"
+elsif alter >= 14
+  puts "Erwachsenenpreis"
+elsif alter > 2
+  puts "Kinderpreis"
+else
+  puts "Frei"
+end
 {% endhighlight %}
