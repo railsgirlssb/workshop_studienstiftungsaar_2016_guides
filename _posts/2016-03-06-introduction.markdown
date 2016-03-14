@@ -99,7 +99,6 @@ Hier sind Beispiele für Strings die man in `irb` ausprobieren kann:
 * `"Hallo."`
 * `"Ruby rocks."`
 * `"5 ist meine Lieblingszahl... und deine?"`
-* `"Snoopy sagt #%^?&*@!"`
 
 Ruby kann elegante Dinge mit Zeichenketten machen.
 Probier man folgendes aus:
@@ -122,7 +121,7 @@ Hier einige elegante Operationen, die man mit Zeichenketten anstellen kann:
 ## Übungen
 
 * Was erwartest du wird folgendes zurückgeben: `"hallo".length + "welt".length`
-* Versuch in der [Dokumentation von Ruby](http://ruby-doc.org/core-2.2.0/String.html) nachzuschlagen, wie man ein Wort umdreht oder in Großbuchstaben umwandelt und probier es aus.
+* Schau dir mal die [Dokumentation von Ruby](http://ruby-doc.org/core-2.2.0/String.html) zu Strings kurz an. Vielleicht entdeckst du interessante Dinge, die man mit Strings anstellen kann.
 
 
 # Neue Namen für alte Dinge
@@ -506,3 +505,64 @@ names = [ "daniel", "eduardo", "alejandro", "enrique" ]
 {% endhighlight %}
 
 Benutz die Methode **String#capitalize**, um die Namen groß zu schreiben.
+
+# Hashes
+
+Die nächste Klasse, auf die wir einen Blick werfen, ist **Hash**.
+
+Hashes sind eine Verallgemeinerung von Arrays.
+Statt nur ganze Zahlen als Indizes zuzulassen, wie z.B. bei `array[3]`, erlauben Hashes irgendein Objekt als *index* zu benutzen.
+Somit kannst du `hash["name"]` schreiben.
+
+Wir wollen nun einige Informationen über einen Freund speichern.
+Wir könnten hierfür ein Array benutzen:
+
+{% highlight ruby %}
+friend = [ "Herbert", "Maier", "Auf Maien 69",
+  "Neunkirchen", "Saarland"
+]
+{% endhighlight %}
+
+Das würde gehen, aber wir müssten uns merken, dass z.B. `freund[0]` der *Vorname* ist, `freund[1]` der *Nachname*, usw..
+Es könnte noch komplizierter kommen.
+
+Das ist genau das Problem, wo ein Hash weiterhelfen kann.
+So definiert man ein Hash:
+
+{% highlight ruby %}
+friend = {
+  "vorname"    => "Herbert",
+  "nachname"   => "Maier",
+  "adresse"    => "Auf Maien 69",
+  "stadt"      => "Neunkirchen",
+  "bundesland" => "Saarland"
+}
+{% endhighlight %}
+
+Genauso wie bei Arrays können Sie ein neues Feld wie folgt hinzufügen:
+
+
+{% highlight ruby %}
+friend["land"] = "Deutschland"
+{% endhighlight %}
+
+## Schlüssel und Werte
+
+Da Hases keine numerischen Indizes benutzen, benutzen wir das Wort *Schlüssel* (**key**) stattdessen.
+Das Objekt, auf das der Schlüssel zeigt, wird *Wert* (**value**) genannt.
+
+Im obigen Beispiel sind demnach *vorname*, *nachname* und *stadt* Schlüssel.
+Ihre entsprechenden Werte sind *Herbert*, *Maier* und *Neunkirchen*.
+
+## Über Hashes iterieren
+
+Hashes haben auch Iteratoren.
+
+Hashes haben die Methode **Hash#each**, ähnlich zu **Array#each**.
+Diese Methode liefert jedoch den Schlüssel als auch den Wert.
+
+{% highlight ruby %}
+friends.each do |key, value|
+  puts key + " => " + value
+end
+{% endhighlight %}
