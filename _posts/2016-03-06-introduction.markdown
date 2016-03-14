@@ -460,3 +460,49 @@ Du kannst die Länge eines Arrays herausfinden:
 {% highlight ruby %}
 namen.length
 {% endhighlight %}
+
+# Iteratoren
+
+Nun zu einem sehr coolen Merkmal von Ruby: **Iteratoren**
+
+Ein *Iterator* ist eine spezielle Art von Methode.
+Es ist eine Methode, die dich auf Einträge zugreifen lässt, eins nach dem anderen.
+
+Iteratoren versucht man sich am besten anhand von Beispielen klarzumachen.
+
+Im folgenden benutzen wir **Array#each**:
+
+{% highlight ruby %}
+friends = ["Jim", "Jeff", "Tim", "Rob"]
+friends.each do |friend|
+  puts "Ich habe einen Freund, der " + friend + " heißt."
+end
+{% endhighlight %}
+
+Man kann mit der **Integer#times** Methode über ganze Zahlen von **0** bis **n-1** iterieren:
+
+{% highlight ruby %}
+4.times do |zahl|
+  puts zahl
+end
+{% endhighlight %}
+
+Es scheint merkwürdig zu sein, dass mit 0 angefangen wird zu zählen, aber das stimmt mit dem Verhalten bei den Arrays überein, bei denen auch der Index mit 0 beginnt.
+
+Deswegen könnte man die Ausgabe der Freunde auch folgendermaßen umschreiben:
+
+{% highlight ruby %}
+4.times do |index|
+  puts "Ich habe einen Freund, der " + friends[index] + " heißt."
+end
+{% endhighlight %}
+
+## Übung
+
+Gegeben sei das folgende Array:
+
+{% highlight ruby %}
+names = [ "daniel", "eduardo", "alejandro", "enrique" ]
+{% endhighlight %}
+
+Benutz die Methode **String#capitalize**, um die Namen groß zu schreiben.
