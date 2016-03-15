@@ -6,26 +6,29 @@ permalink: game-of-dice
 
 # Würfelspiel
 
-Zufall erzeugen wir mit `rand`
+Wir bauen nun ein Würfelspiel mit Ruby.
+
+Würfelspiele bauen auf zufälligen Zahlen auf.
+Zufälle Zahlen können wir mit der Methode `rand` erzeugen:
 
 {% highlight ruby %}
 rand
 {% endhighlight %}
 
-und eine Ganzzahl, in dem wir das Maximum angeben:
+Eine ganze Zahl können wir erzeugen, in dem wir das Maximum angeben:
 
 {% highlight ruby %}
 rand(6)
 {% endhighlight %}
 
-Wenn wir nun 10 Zufallszahlen daraus erzeugen, sehen wir,
-dass es eine 0, aber nie das Maximum von 6 vorkommt:
+Wenn wir nun probeweise 10 Zufallszahlen daraus in `irb` erzeugen, können wir sehen,
+dass es eine `0`, aber nie das Maximum von `6` vorkommt:
 
 {% highlight ruby %}
 10.times do puts rand(6) end
 {% endhighlight %}
 
-Um also einen Würfel zu simulieren müssen wir noch 1 addieren
+Um also einen Würfel zu simulieren, müssen wir noch 1 addieren:
 
 {% highlight ruby %}
 10.times do puts rand(6) + 1 end
